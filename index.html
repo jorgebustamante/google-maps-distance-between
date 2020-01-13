@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      type="text/javascript"
+      src="http://maps.google.com/maps/api/js?key=AIzaSyCEjew-VEHJxzf5mN9RWPneQZKUWvvk_bw&sensor=false&v=3&libraries=geometry"
+    ></script>
+
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <section>
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <div class="columns">
+            <div class="column">
+              <h3 class="title is-3">Find distance from:</h3>
+              <br />
+              <p>input coords as decimal degrees</p>
+
+              <div class="inputWrapper">
+                <input
+                  id="latOne"
+                  class="input is-rounded"
+                  type="number"
+                  placeholder="Lat: E.G. 37.773972"
+                />
+                <input
+                  id="lngOne"
+                  class="input is-rounded"
+                  type="number"
+                  placeholder="Lng: E.G. -122.431297"
+                />
+              </div>
+            </div>
+            <div class="column">
+              <h3 class="title is-3">To:</h3>
+              <br />
+              <div class="inputWrapper">
+                <input
+                  id="latTwo"
+                  class="input is-rounded"
+                  type="email"
+                  placeholder="Lat: E.G. 37.8715"
+                />
+                <input
+                  id="lngTwo"
+                  class="input is-rounded"
+                  type="email"
+                  placeholder="Lng: E.G. -122.273"
+                />
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="control">
+            <p>Select distance unit:</p>
+            <label class="radio">
+              <input type="radio" name="unit" value="1000" unit='Kilometers' checked /> Kilometers
+            </label>
+            <label class="radio">
+              <input type="radio" name="unit" value="1609.34" unit='Miles'/> Miles
+            </label>
+            <label class="radio">
+                <input type="radio" name="unit" value="1.7" unit='Tom Cruises' /> Tom Cruises
+              </label>
+          </div>
+
+          <button id="action" class="button is-primary">Find distance</button>
+          <button id="fastTest" class="button is-danger">
+            Find distance from SF to Berkeley
+          </button>
+        </div>
+        <br />
+      </div>
+    </section>
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <div id="" class="box has-text-centered">
+          <h5 id="result" class="title is-5"></h5>
+        </div>
+      </div>
+    </div>
+    <!-- Image -->
+    <section class="hero ">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-8 is-offset-2">
+              <div id="wrapper">
+                <div id="map"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered"></div>
+    </footer>
+
+    <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEjew-VEHJxzf5mN9RWPneQZKUWvvk_bw&callback=initMap"
+      async
+      defer
+    ></script> -->
+  </body>
+</html>
