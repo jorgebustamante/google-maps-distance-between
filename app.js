@@ -55,7 +55,7 @@ window.onload = function() {
     let radio = document.querySelector('input[type="radio"]:checked');
 
     result.innerHTML =
-      response * radio.value + ' ' + radio.getAttribute('unit');
+      response / radio.value + ' ' + radio.getAttribute('unit');
   }
 
   //This is for the quick test button rather than user input
